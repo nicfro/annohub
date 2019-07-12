@@ -151,6 +151,14 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = SETTINGS["email_host"]
+EMAIL_USE_TLS = True
+EMAIL_PORT = SETTINGS["email_port"]
+EMAIL_HOST_USER = SETTINGS["email_host_user"]
+EMAIL_HOST_PASSWORD = SETTINGS["email_host_password"]
+
+
 # Django-Allauth Config
 
 LOGIN_REDIRECT_URL = 'home'
