@@ -1,6 +1,6 @@
 <img width="400" src="logo.png" alt="DjangoX logo">
 
-Annotation framework developed for Corti
+Annotation framework
 
 ## Features
 
@@ -48,15 +48,3 @@ Load the site at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 ![Home](static/images/home_2.2.png)
 
 ![Sign Up](static/images/signup_2.2.png)
-
-## Next Steps
-
-- Update [EMAIL_BACKEND](https://docs.djangoproject.com/en/2.0/topics/email/#module-django.core.mail) to configure an SMTP backend
-- Make the [admin more secure](https://opensource.com/article/18/1/10-tips-making-django-admin-more-secure)
-
-## Adding Social Authentication
-
-- [Configuring Google](https://wsvincent.com/django-allauth-tutorial-custom-user-model/#google-credentials)
-- [Configuring Facebook](http://www.sarahhagstrom.com/2013/09/the-missing-django-allauth-tutorial/#Create_and_configure_a_Facebook_app)
-- [Configuring Github](https://wsvincent.com/django-allauth-tutorial/)
-- `django-allauth` supports [many, many other providers in the official docs](https://django-allauth.readthedocs.io/en/latest/providers.html)
