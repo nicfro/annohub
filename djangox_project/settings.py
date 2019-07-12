@@ -11,16 +11,19 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+with open("/home/nicolai/PycharmProjects/annotation/settings.json", "r") as read_file:
+    SETTINGS = json.load(read_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '43)%4yx)aa@a=+_c(fn&kf3g29xax+=+a&key9i=!98zyim=8j'
+SECRET_KEY = SETTINGS["django_secret"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,8 +90,12 @@ WSGI_APPLICATION = 'djangox_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': SETTINGS["db_name"],
+        'USER': SETTINGS["user"],
+        'PASSWORD': SETTINGS["password"],
+        'HOST': SETTINGS["host"],
+        'PORT': SETTINGS["db_port"]
     }
 }
 
