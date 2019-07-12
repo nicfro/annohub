@@ -1,7 +1,9 @@
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
-
-class HomePageView(TemplateView):
+#@login_required(login_url='/accounts/login/')
+class HomePageView(LoginRequiredMixin, TemplateView):
     template_name = 'pages/home.html'
 
 

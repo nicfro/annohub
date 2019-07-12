@@ -16,7 +16,7 @@ import json
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-with open("/home/nicolai/PycharmProjects/annotation/settings.json", "r") as read_file:
+with open("/home/nicolai/PycharmProjects/settings.json", "r") as read_file:
     SETTINGS = json.load(read_file)
 
 # Quick-start development settings - unsuitable for production
@@ -92,9 +92,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': SETTINGS["db_name"],
-        'USER': SETTINGS["user"],
-        'PASSWORD': SETTINGS["password"],
-        'HOST': SETTINGS["host"],
+        'USER': SETTINGS["db_user"],
+        'PASSWORD': SETTINGS["db_password"],
+        'HOST': SETTINGS["db_host"],
         'PORT': SETTINGS["db_port"]
     }
 }
@@ -149,8 +149,7 @@ INTERNAL_IPS = ['127.0.0.1']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+# Email configuration for password resets
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = SETTINGS["email_host"]
 EMAIL_USE_TLS = True
@@ -161,7 +160,7 @@ EMAIL_HOST_PASSWORD = SETTINGS["email_host_password"]
 
 # Django-Allauth Config
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'accounts/login/'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS = (
