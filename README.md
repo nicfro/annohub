@@ -18,7 +18,7 @@ Annotation framework
 2.  Clone the repo and configure the virtual environment:
 
 ```
-$ git clone https://github.com/wsvincent/djangox.git
+$ https://github.com/nicfro/annohub.git
 $ cd djangox
 $ pipenv install
 $ pipenv shell
